@@ -2,13 +2,11 @@
 <html lang="sk">
 <head>
   <meta charset="UTF-8">
-  <title>Matej Lakatoš – Fotograf, Trenčín</title>
+  <title>Matej Lakatoš – Fotograf Trenčín</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -17,22 +15,108 @@
       color: #f2f2f2;
     }
 
-    header {
-      padding: 80px 20px 50px;
-      text-align: center;
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 90vh;
+      background: url("hero.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 6px;
       letter-spacing: 1px;
     }
 
-    header p {
-      opacity: 0.75;
-      font-size: 1.1rem;
+    .hero p {
+      opacity: 0.85;
+      font-size: 1.2rem;
+      margin-bottom: 25px;
     }
 
+    .contact-box {
+      margin-top: 20px;
+    }
+
+    .contact-text {
+      margin-bottom: 12px;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      margin: 6px;
+      padding: 12px 22px;
+      border-radius: 30px;
+      background: white;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .contact-links a:hover {
+      background: #ddd;
+    }
+
+    /* ABOUT */
+    .about {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .about p {
+      opacity: 0.75;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    /* REVIEWS */
+    .reviews {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .review {
+      background: #151515;
+      padding: 25px;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .review span {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+      opacity: 0.7;
+    }
+
+    /* GALLERY */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -44,50 +128,39 @@
 
     .gallery img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
       border-radius: 14px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      cursor: pointer;
+      transition: transform 0.3s ease;
     }
 
     .gallery img:hover {
       transform: scale(1.03);
-      opacity: 0.9;
     }
 
-    .cta {
-      text-align: center;
-      padding: 70px 20px 50px;
+    /* LIGHTBOX */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
     }
 
-    .cta h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
     }
 
-    .cta p {
-      opacity: 0.75;
-      margin-bottom: 25px;
-    }
-
-    .cta a {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 30px;
-      background: white;
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .cta a:hover {
-      background: #ddd;
+    .lightbox.active {
+      display: flex;
     }
 
     footer {
       text-align: center;
-      padding: 30px 20px;
+      padding: 40px 20px;
       font-size: 0.9rem;
       opacity: 0.5;
     }
@@ -95,37 +168,83 @@
 </head>
 <body>
 
-<header>
-  <h1>Matej</h1>
-  <p>Eventy • Plesy • Birmovky</p>
-</header>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Matej</h1>
+    <p>Fotograf Trenčín</p>
+
+    <div class="contact-box">
+      <p class="contact-text">Kontaktujte ma tu alebo tu:</p>
+      <div class="contact-links">
+        <a href="tel:+421900000000">📞 Telefón</a>
+        <a href="mailto:matej@email.sk">✉️ Email</a>
+        <a href="https://instagram.com/TVOJ_INSTAGRAM" target="_blank">📸 Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <p>
+    Som fotograf zameraný na koncerty, plesy a spoločenské udalosti.
+    Zachytávam atmosféru, emócie a dôležité momenty tak, aby mali hodnotu aj po rokoch.
+    Pracujem spoľahlivo, rýchlo a s citom pre detail.
+  </p>
+</section>
+
+<section class="reviews">
+  <div class="review">
+    „Fotky z koncertu vystihli presne tú energiu, ktorú sme chceli zachovať.“
+    <span>— organizátor koncertu</span>
+  </div>
+  <div class="review">
+    „Profesionálny prístup počas celého plesu, výsledné fotky mali veľký úspech.“
+    <span>— maturitný ples</span>
+  </div>
+  <div class="review">
+    „Zachytené všetky dôležité momenty oslavy, komunikácia aj dodanie na jednotku.“
+    <span>— rodinná oslava</span>
+  </div>
+</section>
 
 <section class="gallery">
-  <img src="1.jpg">
-  <img src="B6.jpg">
-  <img src="DSC0046.jpg">
-  <img src="_LKT8309.jpg">
-  <img src="_DSC0393.jpg">
-  <img src="foto6.jpg">
-  <img src="foto7.jpg">
-  <img src="foto8.jpg">
-  <img src="foto9.jpg">
-  <img src="foto10.jpg">
-  <img src="foto11.jpg">
-  <img src="foto12.jpg">
+  <img src="foto1.jpg" loading="lazy">
+  <img src="foto2.jpg" loading="lazy">
+  <img src="foto3.jpg" loading="lazy">
+  <img src="foto4.jpg" loading="lazy">
+  <img src="foto5.jpg" loading="lazy">
+  <img src="foto6.jpg" loading="lazy">
+  <img src="foto7.jpg" loading="lazy">
+  <img src="foto8.jpg" loading="lazy">
+  <img src="foto9.jpg" loading="lazy">
+  <img src="foto10.jpg" loading="lazy">
+  <img src="foto11.jpg" loading="lazy">
+  <img src="foto12.jpg" loading="lazy">
 </section>
 
-<section class="cta">
-  <h2>Máš udalosť, ktorú chceš zachytiť kvalitne?</h2>
-  <p>Napíš mi a dohodneme spoluprácu</p>
-  <a href="https://instagram.com/matej_lakatos" target="_blank">
-    Kontaktuj ma
-  </a>
-</section>
+<div class="lightbox" id="lightbox">
+  <img src="" alt="">
+</div>
 
 <footer>
-  © Matej · Fotograf
+  © Matej · Fotograf Trenčín
 </footer>
+
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = lightbox.querySelector("img");
+
+  document.querySelectorAll(".gallery img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add("active");
+    });
+  });
+
+  lightbox.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+  });
+</script>
 
 </body>
 </html>
