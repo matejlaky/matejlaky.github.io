@@ -12,7 +12,7 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background: #0b0b0b;
-      color: #f2f2f2;
+      color: #f5f5f5;
     }
 
     /* HERO */
@@ -20,6 +20,7 @@
       position: relative;
       height: 90vh;
       background: url("hero.jpg") center/cover no-repeat;
+      background-attachment: fixed; /* STATICKÁ FOTKA */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -29,7 +30,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.65);
+      background: rgba(0,0,0,0.45); /* JASNEJŠIA FOTKA */
     }
 
     .hero-content {
@@ -40,15 +41,17 @@
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       margin-bottom: 6px;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+      color: #ffffff;
     }
 
     .hero p {
-      opacity: 0.85;
-      font-size: 1.2rem;
-      margin-bottom: 25px;
+      font-size: 1.3rem;
+      margin-bottom: 28px;
+      color: #eaeaea;
+      font-weight: 500;
     }
 
     .contact-box {
@@ -56,15 +59,16 @@
     }
 
     .contact-text {
-      margin-bottom: 12px;
-      font-size: 1rem;
-      opacity: 0.8;
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+      color: #f0f0f0;
+      font-weight: 500;
     }
 
     .contact-links a {
       display: inline-block;
       margin: 6px;
-      padding: 12px 22px;
+      padding: 13px 24px;
       border-radius: 30px;
       background: white;
       color: black;
@@ -74,21 +78,21 @@
     }
 
     .contact-links a:hover {
-      background: #ddd;
+      background: #e6e6e6;
     }
 
     /* ABOUT */
     .about {
       max-width: 900px;
-      margin: 80px auto 40px;
+      margin: 90px auto 40px;
       padding: 0 20px;
       text-align: center;
     }
 
     .about p {
-      opacity: 0.75;
-      line-height: 1.6;
-      font-size: 1.05rem;
+      opacity: 0.8;
+      line-height: 1.7;
+      font-size: 1.08rem;
     }
 
     /* REVIEWS */
@@ -102,18 +106,17 @@
     }
 
     .review {
-      background: #151515;
+      background: #161616;
       padding: 25px;
       border-radius: 14px;
       font-size: 0.95rem;
-      opacity: 0.9;
     }
 
     .review span {
       display: block;
       margin-top: 12px;
       font-weight: bold;
-      opacity: 0.7;
+      opacity: 0.75;
     }
 
     /* GALLERY */
@@ -162,7 +165,7 @@
       text-align: center;
       padding: 40px 20px;
       font-size: 0.9rem;
-      opacity: 0.5;
+      opacity: 0.55;
     }
   </style>
 </head>
@@ -170,15 +173,15 @@
 
 <section class="hero">
   <div class="hero-content">
-    <h1>Matej</h1>
+    <h1>Matej Lakatoš</h1>
     <p>Fotograf Trenčín</p>
 
     <div class="contact-box">
-      <p class="contact-text">Kontaktujte ma tu alebo tu:</p>
+      <p class="contact-text">Kontaktujte ma tu👇:</p>
       <div class="contact-links">
-        <a href="tel:+421900000000">📞 Telefón</a>
-        <a href="mailto:matej@email.sk">✉️ Email</a>
-        <a href="https://instagram.com/TVOJ_INSTAGRAM" target="_blank">📸 Instagram</a>
+        <a href="tel:+421907323158">📞 Telefón</a>
+        <a href="mailto:matej.lakatos06@gmail.com">✉️ Email</a>
+        <a href="https://instagram.com/matej_lakatos" target="_blank">📸 Instagram</a>
       </div>
     </div>
   </div>
@@ -187,7 +190,8 @@
 <section class="about">
   <p>
     Som fotograf zameraný na koncerty, plesy a spoločenské udalosti.
-    Zachytávam atmosféru, emócie a dôležité momenty tak, aby mali hodnotu aj po rokoch.
+    Zachytávam atmosféru, emócie a dôležité momenty tak,
+    aby mali hodnotu aj po rokoch.
     Pracujem spoľahlivo, rýchlo a s citom pre detail.
   </p>
 </section>
@@ -199,7 +203,7 @@
   </div>
   <div class="review">
     „Profesionálny prístup počas celého plesu, výsledné fotky mali veľký úspech.“
-    <span>— maturitný ples</span>
+    <span>— školský ples</span>
   </div>
   <div class="review">
     „Zachytené všetky dôležité momenty oslavy, komunikácia aj dodanie na jednotku.“
@@ -227,7 +231,7 @@
 </div>
 
 <footer>
-  © Matej · Fotograf Trenčín
+  © Matej Lakatoš · Fotograf Trenčín
 </footer>
 
 <script>
