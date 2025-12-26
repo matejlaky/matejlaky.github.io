@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <header class="header reveal">
 <meta name="robots" content="index, follow">
 <meta charset="UTF-8">
 <title>Matej Lakatoš – Fotograf Trenčín</title>
@@ -332,7 +331,6 @@ footer {
 </section>
 
 <section class="gallery">
-  <section class="gallery reveal">
   <img src="B6.jpg" loading="lazy">
   <img src="foto1.jpg" loading="lazy">
   <img src="foto2.jpg" loading="lazy">
@@ -380,23 +378,6 @@ function scrollDown() {
     nextSection.scrollIntoView({ behavior: 'smooth' });
   }
 }
-  <script>
-/* ===== SCROLL REVEAL ===== */
-const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-  const windowHeight = window.innerHeight;
-  reveals.forEach(el => {
-    const elementTop = el.getBoundingClientRect().top;
-    if (elementTop < windowHeight - 100) {
-      el.classList.add("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-</script>
 </script>
 
 </body>
