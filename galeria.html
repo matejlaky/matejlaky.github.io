@@ -118,6 +118,17 @@ body {
   transform: scale(1.03);
 }
 
+.gallery h3 {
+  margin-top: 60px;
+  font-size: 1.6rem;
+}
+
+.gallery p {
+  max-width: 800px;
+  margin: 10px auto 30px;
+  opacity: 0.75;
+}
+
 /* ===== LIGHTBOX ===== */
 .lightbox {
   position: fixed;
@@ -145,18 +156,6 @@ footer {
   font-size: 0.9rem;
   opacity: 0.55;
 }
-
-  .gallery h3 {
-  margin-top: 60px;
-  font-size: 1.6rem;
-}
-
-.gallery p {
-  max-width: 800px;
-  margin: 10px auto 30px;
-  opacity: 0.75;
-}
-  
 </style>
 </head>
 
@@ -179,23 +178,23 @@ footer {
 
 <!-- CATEGORIES -->
 <div class="categories">
-  <button class="active" onclick="filterGallery('all')">Všetko</button>
-  <button onclick="filterGallery('plesy')">Plesy</button>
-  <button onclick="filterGallery('koncerty')">Koncerty</button>
-  <button onclick="filterGallery('ine')">Eventy</button>
+  <button class="active" onclick="filterGallery('all', this)">Všetko</button>
+  <button onclick="filterGallery('plesy', this)">Plesy</button>
+  <button onclick="filterGallery('koncerty', this)">Koncerty</button>
+  <button onclick="filterGallery('eventy', this)">Eventy</button>
 </div>
 
 <!-- GALLERY -->
 <section class="gallery">
 
   <!-- EVENTY -->
-    <h3>Eventy</h3>
+  <h3>Eventy</h3>
   <p>
     Reportážne fotografie zo spoločenských podujatí, osláv a verejných akcií.
     Zachytávam prirodzené momenty, atmosféru a detaily, ktoré tvoria príbeh udalosti.
     Fotografovanie prebieha najmä v Trenčíne a okolí.
   </p>
-  
+
   <img src="ine1.jpg" data-category="eventy">
   <img src="ine2.jpg" data-category="eventy">
   <img src="ine4.jpg" data-category="eventy">
@@ -214,7 +213,7 @@ footer {
     Koncertná fotografia zameraná na energiu, emócie a autentickú atmosféru vystúpení.
     Fotím menšie aj väčšie koncerty, pódiové momenty aj reakcie publika.
   </p>
-  
+
   <img src="koncert1.jpg" data-category="koncerty">
   <img src="koncert2.jpg" data-category="koncerty">
   <img src="koncert3.jpg" data-category="koncerty">
@@ -234,6 +233,7 @@ footer {
     Fotografie z plesov a formálnych spoločenských udalostí.
     Dôraz kladiem na eleganciu, emócie a dôležité momenty večera.
   </p>
+
   <img src="ples1.jpg" data-category="plesy">
   <img src="ples2.jpg" data-category="plesy">
   <img src="ples3.jpg" data-category="plesy">
@@ -255,12 +255,17 @@ function toggleMenu() {
 }
 
 // FILTER
-function filterGallery(category) {
-  document.querySelectorAll(".categories button").forEach(btn => btn.classList.remove("active"));
-  event.target.classList.add("active");
+function filterGallery(category, button) {
+  document.querySelectorAll(".categories button")
+    .forEach(btn => btn.classList.remove("active"));
+
+  button.classList.add("active");
 
   document.querySelectorAll(".gallery img").forEach(img => {
-    img.style.display = (category === "all" || img.dataset.category === category) ? "block" : "none";
+    img.style.display =
+      (category === "all" || img.dataset.category === category)
+        ? "block"
+        : "none";
   });
 }
 
