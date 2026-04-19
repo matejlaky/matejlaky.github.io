@@ -102,6 +102,47 @@
       border-top: 1px solid rgba(255,255,255,0.08);
       margin-top: 80px;
     }
+    /* ===== FORMULÁR (NOVÉ) ===== */  
+.contact-form-section {  
+  max-width: 700px;  
+  margin: 100px auto;  
+  padding: 0 20px;  
+  text-align: center;  
+}  
+
+.contact-form-section h2 {  
+  margin-bottom: 10px;  
+}  
+
+.contact-form-section p {  
+  opacity: 0.75;  
+  margin-bottom: 30px;  
+}  
+
+.contact-form {  
+  display: grid;  
+  gap: 14px;  
+}  
+
+.contact-form input,  
+.contact-form textarea {  
+  background: #161616;  
+  border: 1px solid rgba(255,255,255,0.25);  
+  border-radius: 10px;  
+  padding: 14px;  
+  color: white;  
+  font-size: 1rem;  
+}  
+
+.contact-form button {  
+  padding: 14px;  
+  border-radius: 25px;  
+  border: none;  
+  background: white;  
+  color: black;  
+  font-size: 1rem;  
+  cursor: pointer;  
+}  
   </style>
 </head>
 <body>
@@ -137,6 +178,24 @@
       📸 Instagram
       <span>@matej_lakatos</span>
     </a>
+    <!-- ===== FORMULÁR (NOVÉ) ===== -->
+<section class="contact-form-section">
+  <h2>Kontaktný formulár</h2>
+  <p>Napíšte mi základné informácie o akcii alebo spolupráci.</p>
+
+  <form
+    class="contact-form"
+    action="https://formspree.io/f/maqqypaj"
+    method="POST">
+
+    <input type="text" name="name" placeholder="Meno / Organizácia" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" rows="5" placeholder="Správa" required></textarea>
+
+    <input type="hidden" name="_redirect" value="https://matejlakatos.online/thank-you.html">
+
+    <button type="submit">Odoslať správu</button>
+  </form>
   </div>
 
   <a href="index.html" class="back-link">← Späť na hlavnú stránku</a>
